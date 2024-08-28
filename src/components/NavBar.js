@@ -1,17 +1,17 @@
 import { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-// import logo from "../assets/media/poems-logo.png";
+import logo from "../assets/media/poems-logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-// import {
-//   useCurrentUser,
-//   useSetCurrentUser,
-// } from "../contexts/CurrentUserContext";
-// import { removeTokenTimestamp } from "../utils/utils";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
+import { removeTokenTimestamp } from "../utils/utils";
 import Avatar from "./Avatar";
-// import axios from "axios";
-// import { useAlert } from "../contexts/AlertContext";
+import axios from "axios";
+import { useAlert } from "../contexts/AlertContext";
 
 /**
  *  Render the first navbar on top right.
@@ -24,7 +24,7 @@ const NavBar = () => {
   // const profile_id = currentUser?.profile_id;
 
   /** get the function to set current user info */
-  // const setCurrentUser = useSetCurrentUser();
+  //const setCurrentUser = useSetCurrentUser();
 
   const [myMenu, setMyMenu] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -177,7 +177,7 @@ const NavBar = () => {
     >
       <NavLink exact activeClassName={styles.Active} to="/">
         <Navbar.Brand className={styles.Logo}>
-          {/* <img src={logo} alt="logo" /> */}
+          <img src={logo} alt="logo" />
         </Navbar.Brand>
       </NavLink>
       <h1 className="mt-4">Your Poetry</h1>

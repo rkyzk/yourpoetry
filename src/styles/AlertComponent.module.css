@@ -1,0 +1,5 @@
+.AlertMessage {
+  z-index: 5;
+  position: absolute;
+  top: 30px;
+}

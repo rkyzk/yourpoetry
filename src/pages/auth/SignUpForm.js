@@ -8,22 +8,22 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-// import { useAlert } from "../../contexts/AlertContext";
+import { useAlert } from "../../contexts/AlertContext";
 import axios from "axios";
-// import { useRedirect } from "../../hooks/useRedirect";
-// import tree from "../../assets/media/tree.jpg";
+import { useRedirect } from "../../hooks/useRedirect";
+import tree from "../../assets/media/tree.jpg";
 
 /**
  * Return sign up form.
  */
 const SignUpForm = () => {
   /** Redirect logged in users. */
-  // useRedirect("loggedIn");
+  useRedirect("loggedIn");
   /** stores info about which pages the user has visited. */
   const navigate = useNavigate();
 
   // import alert context and setters for alert & show
-  // const { showAlert } = useAlert();
+  const { showAlert } = useAlert();
 
   /** registerData will store data entered by users. */
   const [registerData, setRegisterData] = useState({
@@ -55,7 +55,7 @@ const SignUpForm = () => {
     event.preventDefault();
     try {
       await axios.post("dj-rest-auth/registration/", registerData);
-      // showAlert("Your account has been made.");
+      showAlert("Your account has been made.");
       navigate("/signin");
     } catch (err) {
       setErrors(err.response?.data);
@@ -65,7 +65,7 @@ const SignUpForm = () => {
   return (
     <Row>
       <Col className="d-none d-lg-flex justify-content-end" lg={{ span: 6 }}>
-        {/* <img className="TreeImg" src={tree} alt="tree" /> */}
+        <img className="TreeImg" src={tree} alt="tree" />
       </Col>
       <Col
         className="my-auto pl-lg-3 d-lg-flex justify-content-lg-start"

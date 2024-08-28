@@ -1,7 +1,7 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-// import FeaturedProfiles from "../profiles/FeaturedProfiles";
+import FeaturedProfiles from "../profiles/FeaturedProfiles";
 import styles from "../../styles/Home.module.css";
 // import PoemsPage from "./PoemsPage";
 import { Link } from "react-router-dom";
@@ -49,7 +49,7 @@ function Home() {
         <Col className="py-2 p-0 p-lg-2" lg={8}>
           {/* display featured profiles at the top center for
             screen sizes md or smaller. */}
-          {/* <FeaturedProfiles mobile /> */}
+          <FeaturedProfiles mobile />
           {intro}
           <hr className="my-4" />
           {/* featured poems section */}

@@ -20,10 +20,10 @@ import SignUpForm from "./pages/auth/SignUpForm";
 // import Contact from "./pages/other_pages/Contact";
 // import SearchPoems from "./pages/poems/SearchPoems";
 // import SearchProfiles from "./pages/profiles/SearchProfiles";
-// import FooterComponent from "./components/FooterComponent";
+import FooterComponent from "./components/FooterComponent";
 // import PoemsByCategories from "./pages/poems/PoemsByCategories";
-// import AlertComponent from "./components/AlertComponent";
-// import ModalComponent from "./components/ModalComponent";
+import AlertComponent from "./components/AlertComponent";
+import ModalComponent from "./components/ModalComponent";
 
 function App() {
   // const currentUser = useCurrentUser();
@@ -32,8 +32,8 @@ function App() {
   return (
     <div className={styles.App}>
       <NavBar />
-      {/* <NavBarSecond />
-      <AlertComponent /> */}
+      {/* <NavBarSecond />*/}
+      <AlertComponent />
       <Container className={styles.Main}>
         <Routes>
           <Route path="/signin" element={<SignInForm />} />
@@ -116,8 +116,8 @@ function App() {
           <Route render={() => <h1>Page not found</h1>} />
         </Routes>
       </Container>
-      {/* <FooterComponent />
-      <ModalComponent /> */}
+      <FooterComponent />*
+      <ModalComponent />
     </div>
   );
 }
