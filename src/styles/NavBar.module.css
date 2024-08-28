@@ -1,0 +1,171 @@
+.NavBar {
+  background-color: #f8f8f8;
+  height: 100px;
+  padding: 0 100px;
+  z-index: 2;
+}
+
+.Logo img {
+  width: 50px;
+  height: 90px;
+}
+
+.Active {
+  text-decoration: underline;
+}
+
+.NavLink {
+  font-family: "Nanum Myeongj";
+  color: rgb(39, 72, 117);
+  margin-top: 20px;
+}
+
+.Dropdown {
+  z-index: 3;
+}
+
+.NavBar .NavDropdownItem {
+  font-size: 1rem;
+  font-family: "Nanum Myeongj";
+  color: rgb(39, 72, 117);
+  margin-left: 10px;
+}
+
+.NavBar .NavDropdownItem:hover,
+.NavLink:hover {
+  text-decoration: underline;
+  color: rgb(10, 10, 90);
+}
+
+.DropdownBox {
+  border: solid 1px #ccc;
+  padding: 7px;
+  background-color: #f8f8f8;
+  position: absolute;
+  top: 88px;
+  right: 100px;
+}
+
+.NavBar > div > button {
+  border: none;
+}
+
+.NavBar .DropdownBtn {
+  background-color: #f8f8f8;
+  outline: none;
+  border: none;
+  font-family: "Nanum Myeongj";
+  color: rgb(39, 72, 117);
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.NavBar .DropdownBtn:hover {
+  background-color: #f8f8f8;
+  color: rgb(10, 10, 90);
+  text-decoration: underline;
+  outline: none;
+  border: none;
+}
+
+.NavBar .DropdownBtn:active {
+  background-color: #f8f8f8;
+  color: rgb(10, 10, 90);
+  outline: none;
+  border: none;
+}
+
+@media screen and (max-width: 950px) {
+  .NavBar {
+    padding: 0 60px;
+  }
+
+  .DropdownBox {
+    right: 60px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .NavBar {
+    padding-right: 40px;
+  }
+
+  .NavBar h1 {
+    margin-left: -15px;
+  }
+
+  .NavToggle {
+    background-color: #f8f8f8;
+    width: 120px;
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 10px;
+    position: absolute;
+    top: 65px;
+    right: 50px;
+  }
+
+  .NavLink {
+    margin-top: 0;
+  }
+
+  .NavBar .NavToggle a {
+    font-size: 1rem;
+  }
+
+  .NavBar .Dropdown a {
+    margin-top: 0;
+  }
+
+  .NavBar .DropdownBtn {
+    width: 80px;
+    padding: 0;
+    margin-top: 0;
+    margin-left: -10px;
+    background-color: #fafafa;
+    font-size: 1rem;
+  }
+
+  .NavBar > button {
+    border: none;
+    outline: none;
+  }
+
+  .NavBar .DropdownBtn:hover {
+    color: rgb(10, 10, 90);
+  }
+
+  .DropdownBox {
+    padding: 7px 0;
+    top: 87px;
+    right: 0;
+    width: 155px;
+    background-color: #fafafa;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .NavBar {
+    padding: 0 35px;
+  }
+
+  .NavToggle {
+    right: 35px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .NavBar {
+    padding: 0 20px;
+  }
+
+  .NavToggle {
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+}

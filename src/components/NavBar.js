@@ -1,17 +1,17 @@
 import { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import logo from "../assets/media/poems-logo.png";
+// import logo from "../assets/media/poems-logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import {
-  useCurrentUser,
-  useSetCurrentUser,
-} from "../contexts/CurrentUserContext";
-import { removeTokenTimestamp } from "../utils/utils";
+// import {
+//   useCurrentUser,
+//   useSetCurrentUser,
+// } from "../contexts/CurrentUserContext";
+// import { removeTokenTimestamp } from "../utils/utils";
 import Avatar from "./Avatar";
-import axios from "axios";
-import { useAlert } from "../contexts/AlertContext";
+// import axios from "axios";
+// import { useAlert } from "../contexts/AlertContext";
 
 /**
  *  Render the first navbar on top right.
@@ -19,15 +19,16 @@ import { useAlert } from "../contexts/AlertContext";
  */
 const NavBar = () => {
   /** get info of logged in user. */
-  const currentUser = useCurrentUser();
-  const profile_id = currentUser?.profile_id;
+  const currentUser = true;
+  // const currentUser = useCurrentUser();
+  // const profile_id = currentUser?.profile_id;
 
   /** get the function to set current user info */
-  const setCurrentUser = useSetCurrentUser();
+  // const setCurrentUser = useSetCurrentUser();
 
   const [myMenu, setMyMenu] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const { showAlert } = useAlert();
+  // const { showAlert } = useAlert();
 
   /** close my menu ('my profile,' 'my poems'...etc) */
   const handleCloseMyMenu = () => {
@@ -71,19 +72,19 @@ const NavBar = () => {
    * Close the drop down menu, set currenUser to null,
    * notify the user and remove the token time stamp.
    */
-  const handleSignOut = async () => {
-    try {
-      // request the backend to log out the user
-      await axios.post("dj-rest-auth/logout/");
-      // set curretUser to null.
-      setCurrentUser(null);
-      // remove the token time stamp.
-      removeTokenTimestamp();
-      showAlert("You've signed out.");
-    } catch (err) {
-      showAlert("Something went wrong.  Please try again.");
-    }
-  };
+  // const handleSignOut = async () => {
+  //   try {
+  //     // request the backend to log out the user
+  //     await axios.post("dj-rest-auth/logout/");
+  //     // set curretUser to null.
+  //     setCurrentUser(null);
+  //     // remove the token time stamp.
+  //     removeTokenTimestamp();
+  //     showAlert("You've signed out.");
+  //   } catch (err) {
+  //     showAlert("Something went wrong.  Please try again.");
+  //   }
+  // };
 
   /**
    * Nav link items will be displayed while logged in.
@@ -109,7 +110,7 @@ const NavBar = () => {
         <div className={styles.DropdownBox}>
           <div className="mt-1">
             <NavLink
-              to={`/profiles/${profile_id}`}
+              // to={`/profiles/${profile_id}`}
               className={styles.NavDropdownItem}
             >
               My Profile
@@ -123,7 +124,7 @@ const NavBar = () => {
           <div>
             <NavLink
               className={styles.NavDropdownItem}
-              to={`/profiles/${profile_id}/following`}
+              // to={`/profiles/${profile_id}/following`}
             >
               Poets I'm following
             </NavLink>
@@ -137,7 +138,7 @@ const NavBar = () => {
             <NavLink
               className={styles.NavDropdownItem}
               to="/"
-              onClick={handleSignOut}
+              // onClick={handleSignOut}
             >
               Sign out
             </NavLink>
@@ -176,7 +177,7 @@ const NavBar = () => {
     >
       <NavLink exact activeClassName={styles.Active} to="/">
         <Navbar.Brand className={styles.Logo}>
-          <img src={logo} alt="logo" />
+          {/* <img src={logo} alt="logo" /> */}
         </Navbar.Brand>
       </NavLink>
       <h1 className="mt-4">Your Poetry</h1>
