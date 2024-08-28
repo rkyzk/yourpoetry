@@ -1,0 +1,14 @@
+h3 {
+  font-family: "Nanum Myeongj";
+  font-size: 1.5rem;
+}
+
+.Heading {
+  font-family: "Bacasime Antique", sans-serif;
+}
+
+@media screen and (max-width: 630px) {
+  .Mobile {
+    display: none;
+  }
+}

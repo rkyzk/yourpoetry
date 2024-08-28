@@ -1,0 +1,80 @@
+.Input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #3b476f;
+  opacity: 1;
+}
+
+.Input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #3b476f;
+  opacity: 1;
+}
+
+.Input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #3b476f;
+  opacity: 1;
+}
+
+.Input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #3b476f;
+  opacity: 1;
+}
+
+.Input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #3b476f;
+  opacity: 1;
+}
+
+.Input::placeholder {
+  color: #3b476f;
+  opacity: 1;
+}
+
+.Input {
+  background: #ffffff;
+  border: 1px solid #cacde0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #253464;
+  text-align: center;
+  padding: 10px;
+}
+
+.Header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #2142b2;
+}
+
+.Link {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin: auto;
+  color: #2142b2;
+}
+
+.Link:hover {
+  text-decoration: underline;
+  color: #253464;
+}
+
+.TextColor {
+  color: rgb(226, 141, 55);
+}
+
+.FormContainer {
+  width: 330px !important;
+}
+
+.TreeImg {
+  width: 350px;
+}

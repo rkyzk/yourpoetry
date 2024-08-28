@@ -1,0 +1,56 @@
+.ProfileName {
+  font-size: 1.5rem;
+}
+
+.ProfileText {
+  font-size: 1rem;
+}
+
+.FeaturedName {
+  font-size: 1.2rem;
+}
+.ProfileInfoSmall {
+  display: none;
+}
+
+.ProfileLabel {
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.XSLayout {
+  display: none;
+}
+
+.Mobile {
+  width: 100%;
+}
+
+.ProfileLink {
+  color: rgb(51, 93, 151);
+}
+
+.ProfileLink:hover {
+  color: rgb(10, 10, 90);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 490px) {
+  .SmallLayout {
+    display: none;
+  }
+
+  .XSLayout {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .ProfileInfo {
+    display: none;
+  }
+
+  .ProfileInfoSmall {
+    display: block;
+  }
+}

@@ -1,0 +1,10 @@
+.FooterBg {
+  background-color: rgb(13, 13, 70);
+  height: 70px;
+}
+
+.SocialNW {
+  color: #ddd;
+  margin-left: -14px;
+  list-style: none;
+}

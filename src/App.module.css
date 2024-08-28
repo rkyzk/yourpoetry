@@ -1,0 +1,17 @@
+h1,
+h2 {
+  font-family: "Bacasime Antique", sans-serif;
+}
+
+.App {
+  font-family: "Nanum Myeongj";
+  color: rgb(10, 10, 90);
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.Main {
+  margin-top: 170px;
+  margin-bottom: 20px;
+  min-height: 65vh;
+}

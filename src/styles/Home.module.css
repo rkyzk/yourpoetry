@@ -1,0 +1,23 @@
+.NavLink {
+  color: rgb(51, 93, 151);
+}
+
+.NavLink:hover {
+  text-decoration: underline;
+  color: rgb(10, 10, 90);
+}
+
+.Intro {
+  font-family: Raleway;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 400px) {
+  .Intro {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+}
