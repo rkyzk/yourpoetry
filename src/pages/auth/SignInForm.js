@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import axios from "axios";
-// import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -18,7 +18,7 @@ import { useAlert } from "../../contexts/AlertContext";
  */
 function SignInForm() {
   /** get the function to set current user info to a variable. */
-  // const setCurrentUser = useSetCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
   /** Redirect logged in users. */
   useRedirect("loggedIn");
   /** 'signInData' will store data entered by users  */
@@ -54,7 +54,7 @@ function SignInForm() {
     try {
       const { data } = await axios.post("dj-rest-auth/login/", signInData);
       // set the data of the logged in user to 'currentUser'.
-      // setCurrentUser(data.user);
+      setCurrentUser(data.user);
       // set token time statmp.
       setTokenTimestamp(data);
       showAlert(`Successfully signed in as ${data.user.username}`);
