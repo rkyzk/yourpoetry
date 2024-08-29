@@ -1,0 +1,163 @@
+.NavBarSecond {
+  margin-top: 100px;
+  background-color: #f8f8f8;
+  padding-left: 100px;
+  z-index: 1;
+}
+
+.NavBarSecond button {
+  border: none;
+  outline: none;
+}
+
+.NavBarSecond > div > .NavToggle {
+  padding: 7px;
+  background-color: #fafafa;
+}
+
+.NavBarSecond .NavToggle .NavLink a {
+  font-family: "Nanum Myeongj";
+  color: rgb(35, 78, 139);
+}
+
+.NavBarSecond .NavToggle .NavLink {
+  font-family: "Nanum Myeongj";
+  color: rgb(35, 78, 139);
+}
+
+.NavBarSecond .NavDropdownItem:hover,
+.NavBarSecond .NavItems:hover {
+  text-decoration: underline;
+  color: rgb(10, 10, 90);
+}
+
+.NavDropdownItem {
+  margin-left: 10px;
+}
+
+.PoemsDropdown {
+  width: 77px;
+  padding: 0;
+  margin-left: 15px;
+  background-color: #fafafa;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+
+.NavBarSecond .PoemsDropdown:hover {
+  background-color: #fafafa;
+  color: rgb(10, 10, 90);
+  border: none;
+  outline: none;
+  text-decoration: underline;
+}
+
+.NavBarSecond .PoemsDropdown:active {
+  background-color: #fafafa;
+  color: rgb(10, 10, 90);
+  border: none;
+  outline: none;
+  text-decoration: underline;
+}
+
+.PoemsMenu {
+  width: 160px;
+  background-color: #fafafa;
+  border: solid 1px #ccc;
+  position: absolute;
+  top: 50px;
+  left: 110px;
+  font-size: 1rem;
+}
+
+.PoemsMenu > div {
+  margin-top: 5px;
+}
+
+.PoemsMenu a {
+  color: rgb(35, 78, 139);
+}
+
+.NavItems {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 950px) {
+  .NavBarSecond {
+    padding-left: 60px;
+  }
+
+  .PoemsMenu {
+    left: 60px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .NavBarSecond .NavToggle {
+    background-color: #fff;
+    width: 120px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+  }
+
+  .NavItems {
+    margin-left: 0;
+  }
+
+  .NavBarSecond .PoemsDropdown {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    border: none;
+    outline: none;
+  }
+
+  .NavBarSecond .PoemsDropdown:hover {
+    background-color: #fff;
+  }
+
+  .NavBarSecond .PoemsDropdown:active {
+    background-color: #fff;
+    border: none;
+    outline: none;
+  }
+
+  .NavBarSecond .PoemsMenu {
+    top: 37px;
+    left: 180px;
+  }
+
+  .NavBarSecond .NavLink {
+    font-size: 1rem;
+  }
+
+  .NavBarSecond .NavToggle button {
+    margin-left: -5px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .NavBarSecond {
+    padding-left: 35px;
+  }
+
+  .NavBarSecond .PoemsMenu {
+    left: 155px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .NavBarSecond {
+    padding-left: 20px;
+  }
+
+  .NavBarSecond .PoemsMenu {
+    left: 140px;
+  }
+
+  .NavBarSecond .NavToggle {
+    left: 20px;
+  }
+}
