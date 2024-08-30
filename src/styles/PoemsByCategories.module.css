@@ -1,0 +1,30 @@
+.BtnCategories {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: #333;
+}
+
+.BtnCategories:hover {
+  background-color: transparent;
+  color: #333;
+  outline: transparent;
+  border: none;
+  text-decoration: underline;
+}
+
+.BtnCategories:active {
+  background-color: transparent;
+  color: #333;
+  outline: transparent;
+  border: none;
+}
+
+.BtnCategories:focus {
+  background-color: transparent;
+  color: #333;
+  outline: transparent;
+  border: none;
+}

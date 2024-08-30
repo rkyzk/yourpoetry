@@ -1,119 +1,87 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import Row from "react-bootstrap/Row";
+import React, { useEffect, useState } from "react";
+import Alert from "react-bootstrap/Alert";
 import Col from "react-bootstrap/Col";
 import { axiosReq } from "../../api/axiosDefaults";
-import Poem from "./Poem";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import CommentCreateForm from "../comments/CommentCreateForm";
-import { Link } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Comment from "../comments/Comment";
 import Asset from "../../components/Asset";
+import Poem from "./Poem";
 import { fetchMoreData } from "../../utils/utils";
-import Alert from "react-bootstrap/Alert";
+import { useLocation } from "react-router-dom";
+import styles from "../../styles/PoemsPage.module.css";
 
 /**
- * Return content of individual poem pages.
+ * Get data of poems and return the list of poems.
  */
-function PoemPage() {
-  /** get the poem id from the URL */
-  const { id } = useParams();
-  /** stores data of the poem */
-  const [poem, setPoem] = useState({ results: [] });
-  /** stores info about the logged in user. */
-  const currentUser = useCurrentUser();
-  /** stores profile image of the current user */
-  const profile_image = currentUser?.profile_image;
-  /** stores comments about the poem */
-  const [comments, setComments] = useState({ results: [] });
-  /** stores error messages */
+function PoemsPage({ filter, message = "No results found", heading }) {
+  /** stores poems data */
+  const [poems, setPoems] = useState({ results: [] });
+  /** hasLoaded will be set true when the data loads. */
+  const [hasLoaded, setHasLoaded] = useState(false);
+  /** stores error message */
   const [errMsg, setErrMsg] = useState("");
+  /** get current user info */
+  const currentUser = useCurrentUser();
+  /** stores the URL of the current page */
+  const { pathname } = useLocation();
+  /** tells if padding is necessary  */
+  var customPadding;
+  (pathname === "/my-poems" || pathname === "/liked") && (customPadding = true);
 
+  /**
+   * Get data of poems
+   */
   useEffect(() => {
-    /** get the data of the poem and the comments and set them to variables */
-    const handleMount = async () => {
+    const fetchPoems = async () => {
       try {
-        // get the data of the poem and the comments about the poem
-        const [{ data: poem }, { data: comments }] = await Promise.all([
-          axiosReq.get(`/poems/${id}`),
-          axiosReq.get(`/comments/?poem__id=${id}`),
-        ]);
-        // store the data to 'poem'
-        setPoem({ results: [poem] });
-        // store the data to 'comments'
-        setComments(comments);
+        // get data of poems with the filter
+        const { data } = await axiosReq.get(`/poems/?${filter}`);
+        setPoems(data);
+        setHasLoaded(true);
       } catch (err) {
-        err.response.status === 404 &&
-          setErrMsg("Poem with the given ID was not found.");
+        setErrMsg("The data couldn't be retrieved. Please try again.");
       }
     };
-    handleMount();
-  }, [id]);
+    // at the beginning make sure hasLoaded is set to false.
+    setHasLoaded(false);
+    fetchPoems();
+  }, [filter, pathname, currentUser]);
 
   return (
-    <>
-      <Row className="h-100">
-        <Col className="mt-3" md={{ span: 8, offset: 2 }}>
-          {/* if there are errors, dislay the error message, otherwise display the poem. */}
-          {errMsg ? (
-            <Alert variant="warning" key={errMsg}>
-              {errMsg}
-            </Alert>
+    <Col className={`${customPadding && styles.Padding}`}>
+      <h2 className="my-2 px-2 text-center">{heading}</h2>
+      {/* If there's an error message, display it. */}
+      {errMsg ? (
+        <Alert variant="warning" className="mt-3 text-center">
+          {errMsg}
+        </Alert>
+      ) : hasLoaded ? (
+        <>
+          {/* If there's no error message, and the data has loaded,
+            display the data. */}
+          {poems.results.length ? (
+            <InfiniteScroll
+              children={poems.results.map((poem) => (
+                <Poem key={poem.id} {...poem} setPoems={setPoems} />
+              ))}
+              dataLength={poems.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!poems.next}
+              next={() => fetchMoreData(poems, setPoems)}
+            />
           ) : (
             <>
-              <Poem {...poem.results[0]} setPoems={setPoem} poemPage />
-              {/* If logged in, display comment form.
-                    If not, display the heading 'Comments' if there are any comments. */}
-              {currentUser && (
-                <CommentCreateForm
-                  profile_id={currentUser.profile_id}
-                  profileImage={profile_image}
-                  poem={id}
-                  setPoem={setPoem}
-                  setComments={setComments}
-                />
-              )}
-              {comments.results.length ? (
-                <InfiniteScroll
-                  children={comments.results.map((comment) => (
-                    <Comment
-                      key={comment.id}
-                      {...comment}
-                      setPoem={setPoem}
-                      setComments={setComments}
-                    />
-                  ))}
-                  dataLength={comments.results.length}
-                  loader={<Asset spinner />}
-                  hasMore={!!comments.next}
-                  next={() => fetchMoreData(comments, setComments)}
-                />
-              ) : currentUser ? (
-                <>
-                  {/* If no comments and if logged in,
-                    display the following */}
-                  <span>No comments yet, be the first to comment!</span>
-                </>
-              ) : (
-                <>
-                  {/* If no comments and if not logged in,
-                    display the following */}
-                  <span>
-                    No comments yet.
-                    <Link className="ml-2 mr-2" to="/signin">
-                      Sign in
-                    </Link>
-                    to leave a comment.
-                  </span>
-                </>
-              )}
+              {/* If there's no poem that matches the filter,
+                    display message (no results found, etc). */}
+              <p className="text-center">{message}</p>
             </>
           )}
-        </Col>
-      </Row>
-    </>
+        </>
+      ) : (
+        <Asset />
+      )}
+    </Col>
   );
 }
 
-export default PoemPage;
+export default PoemsPage;
