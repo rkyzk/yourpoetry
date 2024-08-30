@@ -51,7 +51,6 @@ const SignUpForm = () => {
    */
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("hi");
     try {
       await axios.post("dj-rest-auth/registration/", registerData);
       showAlert("Your account has been made.");
@@ -64,7 +63,7 @@ const SignUpForm = () => {
   return (
     <Row>
       <Col className="d-none d-lg-flex justify-content-end" lg={{ span: 6 }}>
-        <img className="TreeImg" src={tree} alt="tree" />
+        <img className={styles.TreeImg} src={tree} alt="tree" />
       </Col>
       <Col
         className="my-auto pl-lg-3 d-lg-flex justify-content-lg-start"

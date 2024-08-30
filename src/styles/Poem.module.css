@@ -1,0 +1,54 @@
+.Poem {
+  border: 1px solid #dadadf;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.LinkText,
+.Text {
+  color: rgb(51, 93, 151);
+}
+
+.LinkText:hover {
+  text-decoration: underline;
+  color: rgb(10, 10, 90);
+}
+
+.CommentIcon {
+  color: #8d7326;
+}
+
+.CommentIcon:hover {
+  color: #d8c513;
+}
+
+.PubDate {
+  font-size: 1rem;
+}
+
+.Title {
+  font-family: "Bacasime Antique";
+  font-size: 1.6rem;
+}
+
+.Line {
+  white-space: pre-line;
+}
+
+.Heart {
+  color: #edae8e;
+}
+
+.Heart:hover {
+  color: #eb9063;
+}
+
+.HeartOutline:hover {
+  color: #db7545;
+}
+
+.Category {
+  font-size: 1rem;
+}

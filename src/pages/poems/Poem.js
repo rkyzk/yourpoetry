@@ -39,7 +39,6 @@ const Poem = (props) => {
   const currentUser = useCurrentUser();
   /** is_owner tells if the current user is the owner of the poem. */
   const is_owner = currentUser?.username === owner;
-
   const navigate = useNavigate();
 
   /** get the pathname */

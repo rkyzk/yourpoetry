@@ -1,0 +1,17 @@
+.Owner {
+  font-weight: bold;
+  color: #2142b2;
+  margin-right: 8px;
+}
+
+.Time {
+  color: #555;
+  font-size: 1rem;
+  margin-top: 3px;
+}
+
+@media screen and (max-width: 575px) {
+  .Time {
+    margin-top: -8px;
+  }
+}
