@@ -164,7 +164,7 @@ const Profile = (props) => {
           <>
             {/* In the featured profiles component for large screen,
                 display the following. */}
-            <Card className="align-items-center">
+            <Card className="align-items-center border-0">
               <Row>
                 <Col xs={4}>
                   <Link className={styles.ProfileLink} to={`/profiles/${id}`}>

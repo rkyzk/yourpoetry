@@ -74,7 +74,7 @@ function SignInForm() {
       <Container className="p-4">
         <h1 className={styles.Header}>sign in</h1>
         <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="username">
+          <Form.Group controlId="username" className="mt-1">
             <Form.Label className="d-none">Username</Form.Label>
             <Form.Control
               className={styles.Input}
@@ -90,7 +90,7 @@ function SignInForm() {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="password">
+          <Form.Group controlId="password" className="mt-1">
             <Form.Label className="d-none">Password</Form.Label>
             <Form.Control
               className={styles.Input}
@@ -107,7 +107,7 @@ function SignInForm() {
             </Alert>
           ))}
           <Button
-            className={`${btnStyles.Button} ${btnStyles.Large} ${btnStyles.Olive}`}
+            className={`${btnStyles.Button} ${btnStyles.Large} ${btnStyles.Olive} mt-2`}
             type="submit"
           >
             Sign in

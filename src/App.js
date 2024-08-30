@@ -116,7 +116,7 @@ function App() {
           <Route render={() => <h1>Page not found</h1>} />
         </Routes>
       </Container>
-      <FooterComponent />*
+      <FooterComponent />
       <ModalComponent />
     </div>
   );
