@@ -146,19 +146,17 @@ const Profile = (props) => {
           <>
             {/* In the featured profiles component on screen sizes below md,
                 display the following */}
-            <Row className={`${styles.Mobile} justify-content-center`}>
+            <div className={`${styles.Mobile} justify-content-center`}>
               <Link className={styles.ProfileLink} to={`/profiles/${id}`}>
                 <Avatar src={image} height={45} />
-                <div>
-                  <p className={`ml-2 mb-0 ${styles.MobileName}`}>
-                    {display_name}
-                  </p>
-                  <span className={`ml-2 ${styles.CountsText}`}>
-                    {poems_count} poems
-                  </span>
-                </div>
+                <p className={`ml-2 my-0 ${styles.MobileName}`}>
+                  {display_name}
+                </p>
               </Link>
-            </Row>
+              <span className={`ml-2 ${styles.Counts}`}>
+                {poems_count} poems
+              </span>
+            </div>
           </>
         ) : featured ? (
           <>

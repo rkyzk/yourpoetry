@@ -21,7 +21,7 @@ const ModalComponent = () => {
   let modalText = `Are you sure you want to delete your poem?
                    You won't be able to retrieve the data.`;
 
-  /** delete a poem from the backend,
+  /** delete a poem from the db,
       hide confirmation modal and send the user to 'My Poems' page. */
   const handleDeletePoem = async () => {
     try {
