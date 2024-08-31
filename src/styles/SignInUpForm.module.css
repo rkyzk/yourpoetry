@@ -75,6 +75,7 @@
   width: 330px !important;
 }
 
-.TreeImg {
+.TreeImg,
+.FlowerImg {
   width: 350px;
 }

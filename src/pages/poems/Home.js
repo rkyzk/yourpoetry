@@ -3,17 +3,16 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import FeaturedProfiles from "../profiles/FeaturedProfiles";
 import styles from "../../styles/Home.module.css";
-// import PoemsPage from "./PoemsPage";
+import PoemsPage from "./PoemsPage";
 import { Link } from "react-router-dom";
-// import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 /**
  * Return the content of "Home" page.
  */
 function Home() {
   /** get the currentUser info. */
-  // const currentUser = useCurrentUser();
-  const currentUser = true;
+  const currentUser = useCurrentUser();
 
   /** The heading and the introduction. */
   const intro = (
@@ -53,14 +52,14 @@ function Home() {
           {intro}
           <hr className="my-4" />
           {/* featured poems section */}
-          {/* <PoemsPage
+          <PoemsPage
             filter={`published=1&featured_flag=1&ordering=-created_at&`}
             heading="Featured Poems"
-          /> */}
+          />
         </Col>
         {/* featured profiles for large screen sizes */}
         <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-          {/* <FeaturedProfiles /> */}
+          <FeaturedProfiles />
         </Col>
       </Row>
     </Container>

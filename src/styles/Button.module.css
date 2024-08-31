@@ -40,6 +40,7 @@
 
 .Olive:hover {
   background-color: #524214;
+  color: #ddd;
 }
 
 .You {
@@ -54,7 +55,7 @@
 }
 
 .Black {
-  background-color: #242a3d;
+  background-color: #434a63;
   color: aliceblue;
 }
 

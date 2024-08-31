@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+favicon download
+https://www.flaticon.com/free-icon/barley_4672693?related_id=4672693&origin=pack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://www.freepik.com/free-vector/engraving-hand-drawn-flower_30368039.htm#fromView=search&page=3&position=2&uuid=f4630978-6a4c-4ee5-8e5e-9ef3dc185734
 
-## Available Scripts
+テスト
+components/AlertComponent.js
 
-In the project directory, you can run:
+| Nr  | テスト項目                   | 手順                                               | 想定結果                                     | Pass/Fail | エビデンス | 日付 |
+| :-- | :--------------------------- | :------------------------------------------------- | :------------------------------------------- | :-------- | :--------- | :--- |
+|     | アラートが表示されること     | サインインページで「」「」を入力しサインインを押下 | ホーム画面にアラートが表示される             |           |            |      |
+|     |
+|     | アラートが５秒後に消えること | サインインページで「」「」を入力しサインインを押下 | ホーム画面にアラートが表示され５秒後に消える |           |            |      |
+|     |                              |
 
-### `npm start`
+components/Asset.js
+スピナーが表示されることは各コンポーネントで検証。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+components/Avatar.js
+| Nr | テスト項目 | 手順 | 想定結果 | Pass/Fail | エビデンス | 日付 |
+| :-- | :--------------------------- | :------------------------------------------------- | :------------------------------------------- | :-------- | :--------- | :--- |
+| | 画面サイズ px 以上でアバターが表示されること | サインインする。 | 画面サイズ px 以上でホーム画面にアバターが表示される | | | |
+| | 画面サイズ px 以下でアバターが表示されないこと | サインインする。 | 画面サイズ px 以下でホーム画面にアバターが表示されないこと| | | |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+components/FooterComponent.js
+| Nr | テスト項目 | 手順 | 想定結果 | Pass/Fail | エビデンス | 日付 |
+| :-- | :--------------------------- | :------------------------------------------------- | :------------------------------------------- | :-------- | :--------- | :--- |
+| | フッターに facebook,twitter,instagram のリンク表示されること | ホーム画面を表示。 | フッターに各リンクが表示される | | | |
+| | facebook のリンク| facebook のリンクをクリック | facebook のサイトに遷移する | | | |
+| | twitter のリンク| twitter のリンクをクリック | twitter のサイトに遷移する | | | |
+| | Instagram のリンク| Instagram のリンクをクリック | Instagram のサイトに遷移する | | | |
 
-### `npm test`
+components/ModalComponent.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##　 NavBar
+| Nr | テスト項目 | 手順 | 想定結果 | Pass/Fail | エビデンス | 日付 |
+| :-- | :--------- | :-------------------------------------------------------------------------------------- | :------------------------- | :-------- | :--------- | :-------- |
+| | レイアウト | ホーム画面を表示。画面サイズ 330〜1300px 間でナビゲーションバーの各要素のレイアウトに問題がないことを確認。 | レイアウトに問題がない | P | | 2024/8/31 |
+| | レイアウト | ホーム画面を表示。画面サイズ 330〜767px でナビゲーションバーを確認 | 左右にバーガーメニューが表示される | P | | 2024/8/31 |
+| | ロゴ | Contact 画面を表示し、ロゴをクリック | ホーム画面に遷移する | P | | 2024/8/31 |
+| | ホーム画面へのリンク | Contact 画面を表示し、リンク「Home」をクリック | ホーム画面に遷移する | P | | 2024/8/31 |
+| | ホーム画面へのリンク | Contact 画面を表示し、リンク「Home」をクリック | ホーム画面に遷移する | P | | 2024/8/31 |
 
-### `npm run build`
+##　ホーム画面
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Nr  | テスト項目 | 手順                                                                                    | 想定結果                   | Pass/Fail | エビデンス | 日付      |
+| :-- | :--------- | :-------------------------------------------------------------------------------------- | :------------------------- | :-------- | :--------- | :-------- |
+|     | レイアウト | ホーム画面を表示。画面サイズ 330px1300px 間で各要素のレイアウトに問題がないことを確認。 | レイアウトに問題がないこと | P         |            | 2024/8/31 |
+|     | レイアウト | ホーム画面を表示。画面サイズ 330px1300px 間で各要素のレイアウトに問題がないことを確認。 | レイアウトに問題がないこと | P         |            | 2024/8/31 |
