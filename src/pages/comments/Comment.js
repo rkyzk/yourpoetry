@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";
@@ -65,47 +63,54 @@ const Comment = (props) => {
     <>
       <hr />
       <Card>
-        <Link to={`/profiles/${profile_id}`}>
-          <Avatar src={profile_image} />
-        </Link>
-        <Card.Body className="align-self-center ml-2">
-          <Row>
-            <Col sm={5}>
-              <span className={styles.Owner}>{owner}</span>
-            </Col>
+        <Card.Body className="d-flex">
+          <div style={{ width: "25%" }}>
+            <div>
+              <Link to={`/profiles/${profile_id}`}>
+                <Avatar src={profile_image} />
+              </Link>
+              <span className={`${styles.Owner} ml-2`}>{owner}</span>
+            </div>
             {/* If the comment has been edited, label 'edited' */}
-            {updated_at !== created_at ? (
-              <Col sm={7}>
+            <div className="ml-2">
+              {updated_at !== created_at ? (
+                <div>
+                  <p className={`${styles.Time} my-0`}>
+                    {created_at}
+                    <br />
+                    edited
+                  </p>
+                </div>
+              ) : (
                 <span className={`${styles.Time}`}>{created_at}</span>
-                <span className={`${styles.Time} ml-3`}>edited</span>
-              </Col>
-            ) : (
-              <Col sm={7}>
-                <span className={`${styles.Time}`}>{created_at}</span>
-              </Col>
-            )}
-          </Row>
+              )}
+            </div>
+          </div>
           {/* If showEditForm is true, show the edit form. */}
-          {showEditForm ? (
-            <CommentEditForm
-              id={id}
-              profile_id={profile_id}
-              content={content}
-              profileImage={profile_image}
-              setComments={setComments}
-              setShowEditForm={setShowEditForm}
+          <div className={`${styles.CommentText} ml-3`}>
+            {showEditForm ? (
+              <CommentEditForm
+                id={id}
+                profile_id={profile_id}
+                content={content}
+                profileImage={profile_image}
+                setComments={setComments}
+                setShowEditForm={setShowEditForm}
+                style={{ width: "95%" }}
+              />
+            ) : (
+              <p>{content}</p>
+            )}
+          </div>
+          {/* Display three dots for the owner, if the edit form is not displayed. */}
+          {is_owner && !showEditForm && (
+            <MoreDropdown
+              handleEdit={() => setShowEditForm(true)}
+              handleDeleteComment={handleDeleteComment}
+              className="ml-1"
             />
-          ) : (
-            <p>{content}</p>
           )}
         </Card.Body>
-        {/* Display three dots for the owner, if the edit form is not displayed. */}
-        {is_owner && !showEditForm && (
-          <MoreDropdown
-            handleEdit={() => setShowEditForm(true)}
-            handleDeleteComment={handleDeleteComment}
-          />
-        )}
       </Card>
     </>
   );

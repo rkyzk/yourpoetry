@@ -8,6 +8,13 @@
   color: #555;
   font-size: 1rem;
   margin-top: 3px;
+  line-height: 1.1rem;
+}
+
+.CommentText {
+  font-family: Raleway;
+  font-size: 1rem;
+  width: 75%;
 }
 
 @media screen and (max-width: 575px) {
