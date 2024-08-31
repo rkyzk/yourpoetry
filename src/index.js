@@ -11,19 +11,17 @@ import { FeaturedProfilesDataProvider } from "./contexts/FeaturedProfilesDataCon
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <AlertProvider>
-        <CurrentUserProvider>
-          <ModalProvider>
-            <FeaturedProfilesDataProvider>
-              <App />
-            </FeaturedProfilesDataProvider>
-          </ModalProvider>
-        </CurrentUserProvider>
-      </AlertProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <AlertProvider>
+      <CurrentUserProvider>
+        <ModalProvider>
+          <FeaturedProfilesDataProvider>
+            <App />
+          </FeaturedProfilesDataProvider>
+        </ModalProvider>
+      </CurrentUserProvider>
+    </AlertProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
