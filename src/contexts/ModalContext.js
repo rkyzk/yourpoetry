@@ -8,25 +8,22 @@ export const useModal = () => useContext(ModalContext);
  * Modal context for displaying error messages.
  */
 export const ModalProvider = ({ children }) => {
-  const [obj, setObj] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [objId, setObjId] = useState(0);
 
-  const showConfModal = (obj, id) => {
-    setObj(obj);
+  const showConfModal = (id) => {
     setObjId(id);
     setShowModal(true);
   };
 
   const hideModal = () => {
-    setObj("");
     setShowModal(false);
     setObjId(0);
   };
 
   return (
     <ModalContext.Provider
-      value={{ obj, showModal, objId, showConfModal, hideModal }}
+      value={{ showModal, objId, showConfModal, hideModal }}
     >
       {children}
     </ModalContext.Provider>

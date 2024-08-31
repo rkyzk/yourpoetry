@@ -26,7 +26,6 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
  */
 export const MoreDropdown = ({ handleEdit, poemId, handleDeleteComment }) => {
   const { showConfModal } = useModal();
-  let obj = "poem";
 
   return (
     <Dropdown className="ml-auto" drop="left">
@@ -45,7 +44,7 @@ export const MoreDropdown = ({ handleEdit, poemId, handleDeleteComment }) => {
         {poemId ? (
           <Dropdown.Item
             className={styles.DropdownItem}
-            onClick={() => showConfModal(obj, poemId)}
+            onClick={() => showConfModal(poemId)}
             aria-label="delete"
           >
             <i className="fas fa-trash-alt" />
