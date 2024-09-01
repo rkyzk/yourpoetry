@@ -20,16 +20,6 @@ const FooterComponent = () => {
         </li>
         <li>
           <a
-            href={"https://www.twitter.com"}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Visit our Twitter page (opens in a new tab)"
-          >
-            <i className={`${styles.SocialNW} fa-brands fa-twitter ml-2`}></i>
-          </a>
-        </li>
-        <li>
-          <a
             href={"https://www.instagram.com"}
             target="_blank"
             rel="noreferrer"
