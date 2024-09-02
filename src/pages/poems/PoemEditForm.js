@@ -125,11 +125,11 @@ function PoemEditForm() {
           {message}
         </Alert>
       ))}
-      <Form.Group>
+      <Form.Group className="mb-2">
         <Form.Label>Category</Form.Label>
         <Form.Control
           as="select"
-          className={`${styles.Category} ml-3`}
+          className={`${styles.Category}`}
           name="category"
           value={category}
           onChange={handleChange}
